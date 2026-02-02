@@ -22,7 +22,11 @@ def categorize_number(number):
         categorize_number(0) -> "Nulla"
     """
     # TODO: Írd meg az implementációt!
-    if (number == 0):
+    if (len(str(number)) > 12):
+        return "Nagy szám"
+    elif '.' in str(number):
+        return "Tizedestört"
+    elif (number == 0):
         return "Nulla"
     elif (number > 0):
         return "Pozitív"

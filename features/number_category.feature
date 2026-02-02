@@ -3,17 +3,15 @@ Feature: Szám kategorizálása
   Szeretném tudni, hogy egy szám pozitív, negatív vagy nulla
   Hogy döntéseket hozhassak
 
-  Scenario: Pozitív szám
-    Given a szám értéke 5
+  Scenario Outline: polaritás tesztelése
+    Given a szám értéke "<szam>"
     When megkérdezem, hogy pozitív, negatív vagy nulla
-    Then a válasz "Pozitív" kell legyen
+    Then a válasz "<antworten>" kell legyen
 
-  Scenario: Pozitív szám
-    Given a szám értéke -5
-    When megkérdezem, hogy pozitív, negatív vagy nulla
-    Then a válasz "Negatív" kell legyen
-
-  Scenario: Pozitív szám
-    Given a szám értéke 0
-    When megkérdezem, hogy pozitív, negatív vagy nulla
-    Then a válasz "Nulla" kell legyen
+  Examples:
+    | szam | antworten |
+    | 0 | Nulla |
+    | 5 | Pozitív |
+    | -3 | Negatív |
+    | 2.1 | Tizedestört |
+    | 101010101010110101010 | Nagy szám |
