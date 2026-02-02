@@ -15,6 +15,6 @@ def step_number_value(context, number):
 def step_get_polarity(context):
     context.result = categorize_number(context.szam)
 
-@then ('a válazs {answer} kell legyen')
+@then ('a válasz "{answer}" kell legyen')
 def step_get_answer(context, answer):
     assert context.result == answer
